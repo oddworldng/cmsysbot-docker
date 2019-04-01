@@ -15,9 +15,10 @@ RUN apt-get install -y git
 
 # Create CMSysBot server folder
 RUN mkdir -p /opt/cmsysbot/
+RUN chmod 755 -R /opt/cmsysbot/
 
 # Clone CMSysBot project from Github
-RUN git clone git@github.com:whatever /opt/cmsysbot/
+RUN git clone https://github.com/oddworldng/cmsysbot-docker /opt/cmsysbot/
 
 # Add config.json file
 COPY config_files/config.json /opt//opt/cmsysbot/config/config.json
@@ -51,4 +52,5 @@ VOLUME [ "/opt/cmsysbot/" ]
 EXPOSE 22
 
 # Run CMSysBot
-CMD ["make", "/opt/cmsysbot/"]
+# CMD ["cd /opt/cmsysbot/"]
+# CMD ["make"]
