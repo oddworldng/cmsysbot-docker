@@ -47,5 +47,8 @@ RUN apt-get -y install vim less --no-install-recommends
 RUN apt-get clean
 VOLUME [ "/opt/cmsysbot/" ]
 
+# Open SSH port
+EXPOSE 22
+
 # Run CMSysBot
 CMD ["make", "/opt/cmsysbot/"]
