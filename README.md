@@ -12,7 +12,7 @@ Add executable permissions to the script
 
 Install docker
 
-`sudo ./install_docker`
+`sudo ./install_docker.sh`
 
 ## Download CMSysBot
 
