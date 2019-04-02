@@ -39,3 +39,13 @@ Add your user to the docker group
 
 ## Run Docker container
 `docker run -it -d -p 4444:22 oddworldng/cmsysbot-docker`
+
+## Access Docker container
+
+Get docker ID
+
+`docker ps`
+
+Get into the container (replace CONTAINER_ID for the container ID)
+
+`docker exec -i -t CONTAINER_ID /bin/bash`
