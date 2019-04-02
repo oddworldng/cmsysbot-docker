@@ -17,14 +17,17 @@ Install docker
 ## Download CMSysBot
 
 Get this project from GitHub
+
 `git clone https://github.com/oddworldng/cmsysbot-docker`
 
 ## Add group privileges
 
 Create the docker group
+
 `sudo groupadd docker`
 
 Add your user to the docker group
+
 `sudo usermod -aG docker $USER`
 
 
