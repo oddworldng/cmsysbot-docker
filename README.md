@@ -38,4 +38,4 @@ Add your user to the docker group
 `docker image ls`
 
 ## Run Docker container
-`docker run --name cmsysbot -p 4444:22 cmsysbot:latest`
+`docker run -it -d -p 4444:22 oddworldng/cmsysbot-docker`
