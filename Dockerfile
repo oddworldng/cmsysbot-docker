@@ -51,6 +51,5 @@ VOLUME [ "/opt/cmsysbot/" ]
 # Open SSH port
 EXPOSE 22
 
-# Run CMSysBot
-# CMD ["cd /opt/cmsysbot/"]
-# CMD ["make"]
+# Define default command
+CMD ["bash"]
