@@ -30,12 +30,12 @@ RUN chmod 755 -R /opt/cmsysbot/
 RUN git clone https://github.com/oddworldng/cmsysbot-telegram /opt/cmsysbot/
 
 # Add config.json file
-COPY ${config} /opt/cmsysbot/config/
+ADD cp $config /opt/cmsysbot/config/
 
 # SSH server
 RUN apt-get install -y openssh-server
 RUN mkdir -p /var/run/sshd
-CMD echo 'root:${password}' | chpasswd
+CMD echo 'root:$password' | chpasswd
 
 RUN sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
 RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
