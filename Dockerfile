@@ -27,7 +27,7 @@ RUN mkdir -p /opt/cmsysbot/
 RUN chmod 755 -R /opt/cmsysbot/
 
 # Clone CMSysBot project from Github
-RUN git clone https://github.com/oddworldng/cmsysbot-docker /opt/cmsysbot/
+RUN git clone https://github.com/oddworldng/cmsysbot-telegram /opt/cmsysbot/
 
 # Add config.json file
 COPY ${config} /opt/cmsysbot/config/
