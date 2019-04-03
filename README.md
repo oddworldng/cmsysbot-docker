@@ -31,11 +31,11 @@ Get this project from Docker Hub
 `docker pull oddworldng/cmsysbot-docker`
 
 ## Run Docker container
-`docker run -it -d -p 4444:22 -e config=config.json oddworldng/cmsysbot-docker`
+`docker run -it -d -p 4444:22 oddworldng/cmsysbot-docker`
 
 ## Configure CMSysBot
 
-Get docker ID
+Get container ID
 
 `docker ps`
 
@@ -45,4 +45,4 @@ Copy config.json into docker container
 
 Get into the container
 
-`docker exec -i -t CONTAINER_ID /bin/bash`
+`docker exec -it CONTAINER_ID /bin/bash`

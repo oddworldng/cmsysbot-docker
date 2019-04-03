@@ -5,11 +5,8 @@ MAINTAINER Andrés Nacimiento <alu0100499285@ull.edu.es>
 MAINTAINER David Afonso <alu0101015255@ull.edu.es>
 
 # Arguments
-ARG password
+ARG password=root
 ARG config
-
-#ENV http_proxy host:port
-#ENV https_proxy host:port
 
 # Install Python3
 RUN apt-get clean
@@ -44,12 +41,13 @@ RUN mkdir /root/.ssh
 RUN service ssh restart
 
 # Few handy utilities which are nice to have
-RUN apt-get -y install vim less make --no-install-recommends
+RUN apt-get -y install vim make cat less --no-install-recommends
 
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/
 
-# VOLUME [ "/opt/cmsysbot/log/" ]
+# Log
+VOLUME [ "/opt/cmsysbot/log/" ]
 
 # Run CMSysBot
 CMD cd /opt/cmsysbot/ && make install && make run
