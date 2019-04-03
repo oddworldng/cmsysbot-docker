@@ -6,7 +6,7 @@ MAINTAINER David Afonso <alu0101015255@ull.edu.es>
 
 # Arguments
 ARG ssh_password=cmsysbot
-ENV config config.json
+ENV config config_files/config.json
 
 #ENV http_proxy host:port
 #ENV https_proxy host:port
@@ -49,7 +49,7 @@ RUN apt-get -y install vim less --no-install-recommends
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/
 
-# VOLUME [ "/opt/cmsysbot/" ]
+# VOLUME [ "/opt/cmsysbot/log/" ]
 
 # Run CMSysBot
 RUN cd /opt/cmsysbot/
