@@ -30,7 +30,7 @@ RUN chmod 755 -R /opt/cmsysbot/
 RUN git clone https://github.com/oddworldng/cmsysbot-docker /opt/cmsysbot/
 
 # Add config.json file
-COPY ${config} /opt/cmsysbot/config/config.json
+COPY ${config} /opt/cmsysbot/config/
 
 # SSH server
 RUN apt-get install -y openssh-server
