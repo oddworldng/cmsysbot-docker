@@ -30,7 +30,7 @@ RUN chmod 755 -R /opt/cmsysbot/
 RUN git clone https://github.com/oddworldng/cmsysbot-telegram /opt/cmsysbot/
 
 # Add config.json file
-ADD cp $config /opt/cmsysbot/config/
+ADD $config /opt/cmsysbot/config/
 
 # SSH server
 RUN apt-get install -y openssh-server
