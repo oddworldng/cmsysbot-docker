@@ -36,12 +36,16 @@ Get this project from Docker Hub
 ## Run Docker container
 `docker run -it -d -p 4444:22 -e config=config.json oddworldng/cmsysbot-docker`
 
-## Access Docker container
+## Configure CMSysBot
 
 Get docker ID
 
 `docker ps`
 
-Get into the container (replace CONTAINER_ID for the container ID)
+Copy config.json into docker container
+
+`docker cp -a config.json CONTAINER_ID:/opt/cmsysbot/config/`
+
+Get into the container
 
 `docker exec -i -t CONTAINER_ID /bin/bash`
