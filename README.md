@@ -30,9 +30,6 @@ Get this project from Docker Hub
 
 `docker pull oddworldng/cmsysbot-docker`
 
-## See Docker local images
-`docker image ls`
-
 ## Run Docker container
 `docker run -it -d -p 4444:22 -e config=config.json oddworldng/cmsysbot-docker`
 
