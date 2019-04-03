@@ -14,12 +14,6 @@ Install docker
 
 `sudo ./install_docker.sh`
 
-## Download CMSysBot
-
-Get this project from GitHub
-
-`git clone https://github.com/oddworldng/cmsysbot-docker`
-
 ## Add group privileges
 
 Create the docker group
@@ -30,12 +24,14 @@ Add your user to the docker group
 
 `sudo usermod -aG docker $USER`
 
+## Download CMSysBot
 
-## Build Docker container
-`docker build -t cmsysbot:latest cmsysbot-docker`
+Get this project from Docker Hub
+
+`docker pull oddworldng/cmsysbot-docker`
 
 ## See Docker local images
 `docker image ls`
 
 ## Run Docker container
-`docker run --name cmsysbot -p 4444:22 cmsysbot:latest`
+`docker run --name cmsysbot -p 4444:22 -e config=config.json cmsysbot:latest`

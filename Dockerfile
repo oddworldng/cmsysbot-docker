@@ -6,6 +6,7 @@ MAINTAINER David Afonso <alu0101015255@ull.edu.es>
 
 # Arguments
 ARG ssh_password=cmsysbot
+ENV config config.json
 
 #ENV http_proxy host:port
 #ENV https_proxy host:port
@@ -29,7 +30,7 @@ RUN chmod 755 -R /opt/cmsysbot/
 RUN git clone https://github.com/oddworldng/cmsysbot-docker /opt/cmsysbot/
 
 # Add config.json file
-COPY config_files/config.json /opt/cmsysbot/config/config.json
+COPY ${config} /opt/cmsysbot/config/config.json
 
 # SSH server
 RUN apt-get install -y openssh-server
@@ -49,6 +50,10 @@ RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/
 
 # VOLUME [ "/opt/cmsysbot/" ]
+
+# Run CMSysBot
+RUN cd /opt/cmsysbot/
+RUN make run
 
 # Open SSH port
 EXPOSE 22
