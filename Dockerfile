@@ -6,7 +6,7 @@ MAINTAINER David Afonso <alu0101015255@ull.edu.es>
 
 # Arguments
 ARG ssh_password=cmsysbot
-ENV config config_files/config.json
+ENV config config/config.json
 
 #ENV http_proxy host:port
 #ENV https_proxy host:port
