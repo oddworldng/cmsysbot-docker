@@ -5,8 +5,8 @@ MAINTAINER Andrés Nacimiento <alu0100499285@ull.edu.es>
 MAINTAINER David Afonso <alu0101015255@ull.edu.es>
 
 # Arguments
-ARG ssh_password=cmsysbot
-ENV config config/config.json
+ARG password
+ARG config
 
 #ENV http_proxy host:port
 #ENV https_proxy host:port
@@ -35,7 +35,7 @@ COPY ${config} /opt/cmsysbot/config/config.json
 # SSH server
 RUN apt-get install -y openssh-server
 RUN mkdir -p /var/run/sshd
-RUN echo 'root:${ssh_password}' | chpasswd
+RUN echo 'root:${password}' | chpasswd
 
 RUN sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
 RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
