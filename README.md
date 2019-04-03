@@ -41,7 +41,7 @@ Get docker ID
 
 Copy config.json into docker container
 
-`docker cp -a config.json CONTAINER_ID:/opt/cmsysbot/config/`
+`docker cp -a /path/to/config.json CONTAINER_ID:/opt/cmsysbot/config/`
 
 Get into the container
 
