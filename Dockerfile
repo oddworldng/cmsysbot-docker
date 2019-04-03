@@ -41,7 +41,7 @@ RUN mkdir /root/.ssh
 RUN service ssh restart
 
 # Few handy utilities which are nice to have
-RUN apt-get -y install vim make cat less --no-install-recommends
+RUN apt-get -y install vim make less --no-install-recommends
 
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/
