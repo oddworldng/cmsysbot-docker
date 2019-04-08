@@ -8,6 +8,9 @@ MAINTAINER David Afonso <alu0101015255@ull.edu.es>
 ARG password=root
 ARG config
 
+# Fix UnicodeDecodeError: 'ascii' codec can't decode byte 0x* in position *
+RUN export LANG=C.UTF-8
+
 # Install Python3
 RUN apt-get clean
 RUN apt-get update
